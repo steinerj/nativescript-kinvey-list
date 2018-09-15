@@ -3,8 +3,8 @@
 [![NPM version][npm-image]][npm-url]
 [![Downloads][downloads-image]][npm-url]
 
-[build-status]:https://travis-ci.org/EddyVerbruggen/nativescript-kinvey-list.svg?branch=master
-[build-url]:https://travis-ci.org/EddyVerbruggen/nativescript-kinvey-list
+[build-status]:https://travis-ci.org/steinerj/nativescript-kinvey-list.svg?branch=master
+[build-url]:https://travis-ci.org/steinerj/nativescript-kinvey-list
 [npm-image]:http://img.shields.io/npm/v/nativescript-kinvey-list.svg
 [npm-url]:https://npmjs.org/package/nativescript-kinvey-list
 [downloads-image]:http://img.shields.io/npm/dm/nativescript-kinvey-list.svg
