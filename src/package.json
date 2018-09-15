@@ -3,7 +3,6 @@
     "version": "1.0.0",
     "description": "Your awesome NativeScript plugin.",
     "main": "kinvey-list",
-    "typings": "index.d.ts",
     "nativescript": {
         "platforms": {
             "android": "4.0.0",
@@ -15,12 +14,12 @@
         "build": "npm run tsc && npm run build.native",
         "build.native": "node scripts/build-native.js",
         "postclone": "npm i && node scripts/postclone.js && cd ../demo && npm i && npx rimraf -- package-lock.json && cd ../src",
-        "test.android": "npm run tsc && npm run tslint && cd ../demo && tns build android && tns test android --justlaunch",
-        "test.ios": "npm run tsc && npm run tslint && cd ../demo && tns build ios && tns test ios --justlaunch",
+        "test.android": "npm run tsc && cd ../demo && tns build android && tns test android --justlaunch",
+        "test.ios": "npm run tsc  && cd ../demo && tns build ios && tns test ios --justlaunch",
         "tslint": "cd .. && tslint \"**/*.ts\" --config tslint.json --exclude \"**/node_modules/**\"",
         "plugin.tscwatch": "npm run tsc -- -w",
         "demo.ios": "npm run tsc && cd ../demo && tns run ios --syncAllFiles --emulator",
-        "demo.android": "npm run tsc && cd ../demo && tns run android --syncAllFiles --emulator",
+        "demo.android": "npm run tsc && cd ../demo && tns run android --syncAllFiles",
         "demo.reset": "cd ../demo && npx rimraf -- hooks node_modules platforms package-lock.json",
         "plugin.prepare": "npm run build && cd ../demo && tns plugin remove nativescript-kinvey-list && tns plugin add ../src",
         "clean": "npm run demo.reset && npx rimraf -- node_modules package-lock.json && npm i",
@@ -44,6 +43,19 @@
     "homepage": "https://github.com/steinerj/nativescript-kinvey-list",
     "readmeFilename": "README.md",
     "devDependencies": {
+        "@angular/common": "~6.1.0",
+        "@angular/compiler": "~6.1.0",
+        "@angular/core": "~6.1.0",
+        "@angular/platform-browser-dynamic": "~6.1.0",
+        "@angular/forms": "~6.1.0",
+        "@angular/http": "~6.1.0",
+        "@angular/platform-browser": "~6.1.0",
+        "@angular/router": "~6.1.0",
+        "nativescript-angular": "~6.1.0",
+        "nativescript-theme-core": "~1.0.4",
+        "reflect-metadata": "~0.1.10",
+        "rxjs": "~6.2.0",
+        "zone.js": "~0.8.18",
         "tns-core-modules": "^4.2.0",
         "tns-platform-declarations": "^4.2.0",
         "typescript": "~2.8.2",
@@ -52,6 +64,8 @@
         "tslint": "^5.11.0",
         "semver": "^5.5.0"
     },
-    "dependencies": {},
+    "dependencies": {
+        "kinvey-nativescript-sdk": "^3.11.6"
+    },
     "bootstrapper": "nativescript-plugin-seed"
 }

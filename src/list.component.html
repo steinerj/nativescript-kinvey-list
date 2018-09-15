@@ -1,0 +1,18 @@
+<StackLayout class="home-panel">
+	<StackLayout>
+		<SearchBar #listSearch hint="Search..." [text]="searchPhrase" (clear)="onClear($event)" (submit)="onSubmit($event)"
+		 textFieldBackgroundColor="white"></SearchBar>
+	</StackLayout>
+	<ListView [items]="listItems" (itemTap)="onListItemTap($event)" class="list-group">
+		<ng-template tkListItemTemplate let-listItem="item">
+			<StackLayout class="list-group-item">
+				<StackLayout class="list-group-item-content">
+					<Label [text]="listItem.name" class="text-primary font-weight-bold"></Label>
+				</StackLayout>
+			</StackLayout>
+		</ng-template>
+	</ListView>
+
+	<ActivityIndicator [busy]="isLoading"></ActivityIndicator>
+	<!--Add your page content here-->
+</StackLayout>

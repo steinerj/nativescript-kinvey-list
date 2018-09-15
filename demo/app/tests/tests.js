@@ -1,12 +1,12 @@
-var KinveyList = require("nativescript-kinvey-list").KinveyList;
-var kinveyList = new KinveyList();
+var reflect = require("reflect-metadata");
+var component = require("../app.component");
 
-describe("greet function", function() {
-    it("exists", function() {
-        expect(kinveyList.greet).toBeDefined();
-    });
-
-    it("returns a string", function() {
-        expect(kinveyList.greet()).toEqual("Hello, NS");
+describe("Kinvey SDK test", function() {
+    it("Should login to Kinvey", function() {
+		
+        var appComponent = new component.AppComponent();
+		appComponent.login().then(()=>{
+		     expect(appComponent.show).toBe(true);
+		});
     });
 });
